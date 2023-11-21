@@ -5,7 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 
 @Setter @Getter // Setter is usually not recommended in Entity
-@ToString
+// jpa 연관관계 맵핑에서 연관관계 데이터는 toString에서 제외해야 합니다.
+@ToString(exclude = "department")
 @EqualsAndHashCode( of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,7 +23,9 @@ public class Employee {
     @Column(name = "emp_name", nullable = false)
     private String name;
 
-    @ManyToOne // one(single)-way Mapping
+    // EAGER: 항상 무조건 조인을 수행
+    // LAZY: 필요한 경우에만 조인을 수행 (실무)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dept_id") // give Jpa information of FK for JOIN
     private Department department; // employee should have information of department
 
