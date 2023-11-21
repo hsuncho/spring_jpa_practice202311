@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class Product {
 
     @Id // primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // if oracle GenerationType.SEQUENCE
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // if oracle, GenerationType.SEQUENCE
     @Column(name = "prod_id", nullable = false, unique = true, length = 30) // field name = id, column = prod_id
     private long id; // GenerationType.IDENTITY = auto_increment: no need to make sequence & insert values
     @Column(name = "prod_name")

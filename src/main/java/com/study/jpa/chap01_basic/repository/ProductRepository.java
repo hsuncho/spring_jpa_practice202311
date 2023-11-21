@@ -10,5 +10,4 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // nothing written here but able to use methods in JpaRepository
 
-
 }
