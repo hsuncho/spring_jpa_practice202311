@@ -15,5 +15,4 @@ public interface StudentPageRepository
     Page<Student> findByNameContaining(String name, Pageable pageable);
     // Containing -> LIKE %
     // +) StartWith, EndWith
-
 }

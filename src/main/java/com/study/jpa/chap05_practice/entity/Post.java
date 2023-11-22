@@ -5,7 +5,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.awt.print.PrinterAbortException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,9 @@ public class Post {
 
     @Column(nullable = false)
     private String writer; // 작성자
+
+    @Column(nullable = false)
+    private String title; // 제목
 
     private String content; // 내용
 

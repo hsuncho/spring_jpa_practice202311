@@ -4,8 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+@Getter @Setter
 @ToString( exclude = {"post"})
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
